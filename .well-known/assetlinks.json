@@ -1,14 +1,10 @@
 [
   {
-    "relation": [
-      "delegate_permission/common.handle_all_urls"
-    ],
+    "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
       "package_name": "com.nourislam.android",
-      "sha256_cert_fingerprints":  
-       "82:C8:23:6F:39:31:CD:A4:8C:77:E8:C1:3E:BB:7F:FC:63:52:F9:54:9C:8A:3A:0E:00:C9:4B:E7:79:9F:54:36"
-      ]
+      "sha256_cert_fingerprints": ["76:50:B0:36:09:B4:8C:1C:41:64:1A:44:CF:4E:CF:A3:81:5D:F0:CA:F3:65:69:F1:85:7F:DD:AC:16:85:1B:AD"]
     }
   }
 ]
