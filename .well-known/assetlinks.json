@@ -4,7 +4,8 @@
     "target": {
       "namespace": "android_app",
       "package_name": "com.nourislam.android",
-      "sha256_cert_fingerprints": ["76:50:B0:36:09:B4:8C:1C:41:64:1A:44:CF:4E:CF:A3:81:5D:F0:CA:F3:65:69:F1:85:7F:DD:AC:16:85:1B:AD"]
+      "sha256_cert_fingerprints":
+        ["76:50:B0:36:09:B4:8C:1C:41:64:1A:44:CF:4E:CF:A3:81:5D:F0:CA:F3:65:69:F1:85:7F:DD:AC:16:85:1B:AD"]
     }
   }
 ]
