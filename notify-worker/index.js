@@ -12,7 +12,13 @@ const DATABASE_URL = "https://nour-al-islam-c54df-default-rtdb.europe-west1.fire
 // Doit correspondre à l'intervalle du cron dans le workflow GitHub Actions
 // (ex: */15 * * * * -> 15 minutes). C'est la fenêtre de tolérance utilisée
 // pour ne pas rater une heure de prière entre deux exécutions.
-const WINDOW_MINUTES = 15;
+// GitHub Actions ne respecte pas toujours precisement l'intervalle du cron
+// (retards observes de 20 a 48+ minutes en periode de forte charge).
+// On elargit donc la fenetre de tolerance a 60 minutes pour ne jamais
+// rater une priere, quitte a ce que la notification arrive avec un peu
+// de retard plutot que jamais. Le systeme anti-doublon (push_sent_log)
+// garantit qu'une seule notification est envoyee par priere et par jour.
+const WINDOW_MINUTES = 60;
 
 const serviceAccountRaw = process.env.FIREBASE_SERVICE_ACCOUNT;
 if (!serviceAccountRaw) {
