@@ -1,32 +1,29 @@
-name: Notifications de prière
+name: Prayer notifications
 
 on:
   schedule:
-    # Toutes les 15 minutes. GitHub peut retarder légèrement l'exécution
-    # en période de forte charge — c'est normal, la fenêtre de tolérance
-    # dans notify-worker/index.js absorbe ce petit décalage.
-    - cron: "*/15 * * * *"
-  workflow_dispatch: {}   # permet de le lancer manuellement depuis l'onglet "Actions"
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
 
 jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-      - name: Récupérer le dépôt
+      - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Installer Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
           cache-dependency-path: notify-worker/package.json
 
-      - name: Installer les dépendances
+      - name: Install dependencies
         working-directory: notify-worker
         run: npm install --omit=dev
 
-      - name: Envoyer les notifications de prière
+      - name: Send prayer notifications
         working-directory: notify-worker
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
