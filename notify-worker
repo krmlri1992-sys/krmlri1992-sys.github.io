@@ -1,9 +1,0 @@
-{
-  "name": "prayer-notify-worker",
-  "private": true,
-  "description": "Envoie les notifications de prière via Firebase Cloud Messaging, déclenché par GitHub Actions (gratuit, sans forfait Blaze).",
-  "main": "index.js",
-  "dependencies": {
-    "firebase-admin": "^12.5.0"
-  }
-}
